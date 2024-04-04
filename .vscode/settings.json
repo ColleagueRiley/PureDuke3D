@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "BSTUB.C": "cpp",
+        "stdint.h": "c",
+        "compare": "c",
+        "cstdint": "c",
+        "dukewin.h": "c",
+        "assert.h": "c",
+        "pureduke3d.h": "c",
+        "string.h": "c",
+        "filesystem.h": "c",
+        "dos.h": "c"
+    }
+}
