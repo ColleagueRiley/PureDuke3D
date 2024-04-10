@@ -37,7 +37,7 @@ static int transrev = 0;
 /* ---------------  WALLS RENDERING METHOD (USED TO BE HIGHLY OPTIMIZED ASSEMBLY) ----------------------------*/
 extern int32_t asm1;
 extern intptr_t asm2;
-extern uint8_t *asm3;
+extern uint8_t *draw_asm3;
 extern int32_t asm4;
 
 static uint8_t machxbits_al;
@@ -721,7 +721,7 @@ static int32_t mmach_asm2;
 void mhline(uint8_t  * texture, int32_t i2, int32_t numPixels, int32_t i4, int32_t i5, uint8_t* dest)
 {
     textureData = texture;
-    mmach_asm3 = asm3;
+    mmach_asm3 = draw_asm3;
     mmach_asm1 = asm1;
     mmach_asm2 = asm2;
     mhlineskipmodify(i2,numPixels>>16,i5,dest);
@@ -772,7 +772,7 @@ static int32_t tmach_asm2;
 void thline(uint8_t  * i1, int32_t i2, int32_t i3, int32_t i4, int32_t i5, uint8_t * i6)
 {
     tmach_eax = i1;
-    tmach_asm3 = asm3;
+    tmach_asm3 = draw_asm3;
     tmach_asm1 = asm1;
     tmach_asm2 = asm2;
     thlineskipmodify(asm2,i2,i3,i4,i5,i6);
@@ -853,7 +853,7 @@ void slopevlin(intptr_t i1, uint32_t i2, int32_t i3, int32_t i4, int32_t i5, int
     bitwisef2i c;
     uint32_t ecx,eax,ebx,edx,esi,edi;
 //This is so bad to cast asm3 to int then float :( !!!
-    float a = (float)(int32_t) asm3 + asm2_f;
+    float a = (float)(int32_t) draw_asm3 + asm2_f;
     i1 -= slopemach_ecx;
     esi = i5 + low32((__int64)globalx3 * (__int64)(i2<<3));
     edi = i6 + low32((__int64)globaly3 * (__int64)(i2<<3));

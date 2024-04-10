@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 fabien sanglard. All rights reserved.
 //
 
+#include <stdint.h>
+
 #ifndef Duke3D_global_h
 #define Duke3D_global_h
 

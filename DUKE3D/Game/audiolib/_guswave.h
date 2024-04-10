@@ -31,8 +31,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef ___GUSWAVE_H
 #define ___GUSWAVE_H
 
+#ifndef TRUE
 #define TRUE  ( 1 == 1 )
 #define FALSE ( !TRUE )
+#endif
 
 #define LOADDS _loadds
 

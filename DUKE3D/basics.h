@@ -13,6 +13,9 @@
 #define PLATFORM__APPLE
 #endif
 
+#include <stdint.h>
+#include <stdbool.h>
+
 typedef uint32_t    enet_uint32;
 typedef uint16_t    enet_uint16;
 typedef uint8_t     enet_uint8;

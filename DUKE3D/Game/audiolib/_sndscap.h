@@ -31,11 +31,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef ___SNDSCAP_H
 #define ___SNDSCAP_H
 
+#ifndef TRUE
 #define VALID   ( 1 == 1 )
 #define INVALID ( !VALID )
 
 #define TRUE  ( 1 == 1 )
 #define FALSE ( !TRUE )
+#endif
 
 #define lobyte( num )   ( ( int )*( ( char * )&( num ) ) )
 #define hibyte( num )   ( ( int )*( ( ( char * )&( num ) ) + 1 ) )
@@ -115,7 +117,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 static void SOUNDSCAPE_EnableInterrupt( void );
 static void SOUNDSCAPE_DisableInterrupt( void );
-static void __interrupt __far SOUNDSCAPE_ServiceInterrupt( void );
+static void  SOUNDSCAPE_ServiceInterrupt( void );
 static int  ga_read( int rnum );
 static void ga_write( int rnum, int value );
 static int  ad_read( int rnum );

@@ -302,10 +302,14 @@ void FixFilePath(char  *filename)
 }
 
 
-#if PLATFORM_DOS
+#if defined(PLATFORM_DOS)
  /* no-op. */
 
-#elif PLATFORM_WIN32
+#elif defined(PLATFORM_WIN32)
+#include <dirent.h>
+
+#include <assert.h>
+
 int _dos_findfirst(uint8_t  *filename, int x, struct find_t *f)
 {
     int32_t rc = _findfirst(filename, &f->data);
@@ -431,7 +435,7 @@ int _dos_findnext(struct find_t *f)
 #endif
 
 
-#if !PLATFORM_DOS
+#ifdef PLATFORM_DOS
 void _dos_getdate(struct dosdate_t *date)
 {
 	time_t curtime = time(NULL);
@@ -498,7 +502,6 @@ int FindDistance3D(int ix, int iy, int iz)
 
    return (ix - (ix>>4) + (t>>2) + (t>>3));
 }
-#include "SDL.h"
 void Error (int errorType, char  *error, ...)
 {
    va_list argptr;
@@ -569,7 +572,7 @@ int32 SafeOpenAppend (const char  *_filename, int32 filetype)
 	return handle;
 }
 
-boolean SafeFileExists ( const char  * _filename )
+bool SafeFileExists ( const char  * _filename )
 {
     char  filename[MAX_PATH];
     strncpy(filename, _filename, sizeof (filename));
@@ -875,7 +878,7 @@ int setup_homedir (void)
 		return -1;
 	}
 #else
-    sprintf(ApogeePath, ".%s", PATH_SEP_STR);
+    sprintf(ApogeePath, ".%s", "\\");
 #endif
 
 	return 0;

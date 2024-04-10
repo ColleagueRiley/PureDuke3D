@@ -796,9 +796,11 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 #define furthestdir 1024
 #define dodgebullet 4096
 
+#ifndef YES
 // Some misc #defines
 #define NO       0
 #define YES      1
+#endif
 
 // Defines for 'useractor' keyword
 #define notenemy       0

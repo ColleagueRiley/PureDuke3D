@@ -1,3 +1,4 @@
+#include <stdint.h>
 /*
 Copyright (C) 1994-1995 Apogee Software, Ltd.
 

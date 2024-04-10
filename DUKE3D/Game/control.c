@@ -41,10 +41,10 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 // extern int g_CV_SmoothMouseSensY;
 
 uint32   CONTROL_RudderEnabled;
-boolean  CONTROL_MousePresent;
-boolean  CONTROL_JoysPresent[ MaxJoys ];
-boolean  CONTROL_MouseEnabled;
-boolean  CONTROL_JoystickEnabled;
+bool  CONTROL_MousePresent;
+bool  CONTROL_JoysPresent[ MaxJoys ];
+bool  CONTROL_MouseEnabled;
+bool  CONTROL_JoystickEnabled;
 byte     CONTROL_JoystickPort;
 uint32   CONTROL_MouseButtonState1;
 uint32   CONTROL_MouseButtonState2;
@@ -420,7 +420,7 @@ void CONTROL_MapButton
         (
         int32 whichfunction,
         int32 whichbutton,
-        boolean clicked_or_doubleclicked
+        bool clicked_or_doubleclicked
         )
 {
     if(clicked_or_doubleclicked)
@@ -432,7 +432,7 @@ void CONTROL_MapButton
     MouseMapping[whichbutton] = whichfunction;
 }
 
-void CONTROL_MapJoyButton(int32 whichfunction, int32 whichbutton, boolean doubleclicked)
+void CONTROL_MapJoyButton(int32 whichfunction, int32 whichbutton, bool doubleclicked)
 {
     if(whichbutton < 0 || whichbutton >= MAXJOYBUTTONS)
     {
@@ -455,12 +455,12 @@ void CONTROL_MapJoyHat(int32 whichfunction, int32 whichhat, int32 whichvalue)
     JoyHatMapping[whichhat][whichvalue] = whichfunction;
 }
 
-void CONTROL_DefineFlag( int32 which, boolean toggle )
+void CONTROL_DefineFlag( int32 which, bool toggle )
 {
 	// STUBBED("CONTROL_DefineFlag");
 }
 
-boolean CONTROL_FlagActive( int32 which )
+bool CONTROL_FlagActive( int32 which )
 {
 	STUBBED("CONTROL_FlagActive");
 	return false;
@@ -859,7 +859,7 @@ void CONTROL_PrintAxes( void )
 	STUBBED("CONTROL_PrintAxes");
 }
 
-boolean MOUSE_Init( void )
+bool MOUSE_Init( void )
 {
 	memset(MouseMapping,-1,sizeof(MouseMapping));
 	memset(MouseDigitalAxeMapping, -1, sizeof(MouseDigitalAxeMapping));

@@ -2033,7 +2033,7 @@ void parseifelse(int32_t condition)
     if( condition )
     {
         insptr+=2;
-        parse();
+        game_parse();
     }
     else
     {
@@ -2041,14 +2041,14 @@ void parseifelse(int32_t condition)
         if(*insptr == 10)
         {
             insptr+=2;
-            parse();
+            game_parse();
         }
     }
 }
 
 // int32_t *it = 0x00589a04;
 
-uint8_t  parse(void)
+uint8_t  game_parse(void)
 {
     int32_t j, l, s;
 
@@ -2580,13 +2580,13 @@ uint8_t  parse(void)
                 tempscrptr = insptr+2;
 
                 insptr = (int32_t *) *(insptr+1);
-                while(1) if(parse()) break;
+                while(1) if(game_parse()) break;
                 insptr = tempscrptr;
             }
             break;
         case 29:
             insptr++;
-            while(1) if(parse()) break;
+            while(1) if(game_parse()) break;
             break;
         case 32:
             g_t[0]=0;
@@ -3164,7 +3164,7 @@ void execute(short i,short p,int32_t x)
     }
 
     do
-        done = parse();
+        done = game_parse();
     while( done == 0 );
 
     if(killit_flag == 1)

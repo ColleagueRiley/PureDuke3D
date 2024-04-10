@@ -13,6 +13,8 @@
 #error Define your platform!
 #endif
 
+#include <stdint.h>
+
 #if (!defined __EXPORT__)
     #define __EXPORT__
 #endif

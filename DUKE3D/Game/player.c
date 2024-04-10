@@ -1797,7 +1797,7 @@ void getinput(short snum)
 // MED
     ControlInfo info;
     int32 tics;
-    boolean running;
+    bool running;
     int32 turnamount;
     int32 keymove;
     int32 momx,momy;

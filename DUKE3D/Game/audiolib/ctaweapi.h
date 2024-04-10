@@ -93,8 +93,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 
 typedef int                     BOOL;
+#ifndef TRUE
 #define FALSE                   0
 #define TRUE                    1
+#endif
 
 typedef unsigned char		BYTE;
 typedef unsigned short		WORD;

@@ -108,8 +108,8 @@ typedef enum
 
 typedef struct
    {
-   boolean   button0;
-   boolean   button1;
+   bool   button0;
+   bool   button1;
    direction dir;
    } UserInput;
 
@@ -156,10 +156,10 @@ typedef enum
 //***************************************************************************
 
 extern uint32   CONTROL_RudderEnabled;
-extern boolean  CONTROL_MousePresent;
-extern boolean  CONTROL_JoysPresent[ MaxJoys ];
-extern boolean  CONTROL_MouseEnabled;
-extern boolean  CONTROL_JoystickEnabled;
+extern bool  CONTROL_MousePresent;
+extern bool  CONTROL_JoysPresent[ MaxJoys ];
+extern bool  CONTROL_MouseEnabled;
+extern bool  CONTROL_JoystickEnabled;
 extern byte     CONTROL_JoystickPort;
 extern uint32   CONTROL_MouseButtonState1;
 extern uint32   CONTROL_MouseButtonState2;
@@ -174,7 +174,7 @@ extern uint32   CONTROL_JoyButtonState;
 //***************************************************************************
 struct _KeyMapping
 {
-	boolean key_active;
+	bool key_active;
 	kb_scancode key1;
 	kb_scancode key2;
 	
@@ -193,12 +193,12 @@ void CONTROL_MapButton
         (
         int32 whichfunction,
         int32 whichbutton,
-        boolean clicked_or_doubleclicked
+        bool clicked_or_doubleclicked
         );
-void CONTROL_MapJoyButton(int32 whichfunction, int32 whichbutton, boolean doubleclicked);
+void CONTROL_MapJoyButton(int32 whichfunction, int32 whichbutton, bool doubleclicked);
 void CONTROL_MapJoyHat(int32 whichfunction, int32 whichhat, int32 whichvalue);
-void CONTROL_DefineFlag( int32 which, boolean toggle );
-boolean CONTROL_FlagActive( int32 which );
+void CONTROL_DefineFlag( int32 which, bool toggle );
+bool CONTROL_FlagActive( int32 which );
 void CONTROL_ClearAssignments( void );
 void CONTROL_GetUserInput( UserInput *info );
 void CONTROL_GetInput( ControlInfo *info );

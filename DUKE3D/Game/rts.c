@@ -34,7 +34,7 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 int32 numlumps;
 static uint8_t  **lumpcache;
 static lumpinfo_t *lumpinfo;              // location of each lump on disk
-static boolean RTS_Started = false;
+static bool RTS_Started = false;
 
 uint8_t  lumplockbyte[11];
 

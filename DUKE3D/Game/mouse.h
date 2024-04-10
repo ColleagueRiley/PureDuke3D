@@ -37,7 +37,7 @@ extern "C" {
 #define RIGHT_MOUSE_PRESSED( button ) ( ( ( button ) & RIGHT_MOUSE ) != 0 )
 #define MIDDLE_MOUSE_PRESSED( button ) ( ( ( button ) & MIDDLE_MOUSE ) != 0 )
 
-boolean MOUSE_Init( void );
+bool MOUSE_Init( void );
 void    MOUSE_Shutdown( void );
 void    MOUSE_ShowCursor( void );
 void    MOUSE_HideCursor( void );

@@ -95,12 +95,10 @@
 #define strncasecmp strnicmp
 
 //Damn you Microsoft, how hard would it REALLY be to support C99 ?!??!?!
-#define inline 
-#include "windows/inttypes.h"
-
-#endif
+#include <inttypes.h>
 
 /* end of win32_compat.h ... */
 
 #endif
 
+#endif

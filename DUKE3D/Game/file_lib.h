@@ -1,3 +1,4 @@
+#include <stdbool.h>
 //-------------------------------------------------------------------------
 /*
 Copyright (C) 1996, 2003 - 3D Realms Entertainment
@@ -76,7 +77,7 @@ void SafeClose ( int32 handle );
 // SafeFileExists - Checks for existence of file
 //
 //==========================================================================
-boolean SafeFileExists ( const char  * filename );
+bool SafeFileExists ( const char  * filename );
 
 //==========================================================================
 //
@@ -191,7 +192,8 @@ void ExtractFileBase (uint8_t  *path, uint8_t  *dest);
 //                returns false otherwise
 //
 //==========================================================================
-boolean GetExtension( uint8_t  *filename, uint8_t  *extension );
+#include <stdbool.h>
+bool GetExtension( uint8_t  *filename, uint8_t  *extension );
 
 //==========================================================================
 //
@@ -233,7 +235,7 @@ uint8_t  * GetPath (uint8_t  * path, uint8_t  *dir);
 //    FALSE - If unsuccessful.
 //
 //******************************************************************************
-boolean ChangeDirectory (uint8_t  * path);
+bool ChangeDirectory (uint8_t  * path);
 
 //******************************************************************************
 //
@@ -250,7 +252,7 @@ boolean ChangeDirectory (uint8_t  * path);
 //    FALSE - If drive change unsuccessful.
 //
 //******************************************************************************
-boolean ChangeDrive (uint8_t  *drive);
+bool ChangeDrive (uint8_t  *drive);
 
 #endif
 

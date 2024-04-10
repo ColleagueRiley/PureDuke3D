@@ -29,7 +29,7 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 #include <string.h>
 #include <fcntl.h>
 
-#include "types.h"
+#include "_types.h"
 #include "develop.h"
 #include "util_lib.h"
 //#include "_animlib.h"
@@ -46,8 +46,9 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 // LOCALS
 //
 //****************************************************************************
+#include <stdbool.h>
 anim_t * anim=NULL;
-static boolean Anim_Started = false;
+static bool Anim_Started = false;
 
 //****************************************************************************
 //

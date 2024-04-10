@@ -683,7 +683,7 @@ void SCRIPT_GetDoubleString
 =
 ==============
 */
-boolean SCRIPT_GetNumber
+bool SCRIPT_GetNumber
    (
    int32 scripthandle,
    char  * sectionname,
@@ -715,19 +715,19 @@ boolean SCRIPT_GetNumber
 /*
 ==============
 =
-= SCRIPT_GetBoolean
+= SCRIPT_Getbool
 =
 ==============
 */
-void SCRIPT_GetBoolean
+void SCRIPT_Getbool
    (
    int32 scripthandle,
    uint8_t  * sectionname,
    uint8_t  * entryname,
-   boolean * bool
+   bool * boolean
    )
 {
-	STUBBED("GetBoolean");
+	STUBBED("Getbool");
 }
 
 
@@ -738,7 +738,7 @@ void SCRIPT_GetBoolean
 =
 ==============
 */
-boolean SCRIPT_GetFloat
+bool SCRIPT_GetFloat
    (
    int32 scripthandle,
    char  * sectionname,
@@ -980,8 +980,8 @@ void SCRIPT_PutNumber
    char  * sectionname,
    char  * entryname,
    int32 number,
-   boolean hexadecimal,
-   boolean defaultvalue
+   bool hexadecimal,
+   bool defaultvalue
    )
 {
 	/* DDOI - I don't know what "defaultvalue" is for so it's ignored */
@@ -1026,19 +1026,19 @@ void SCRIPT_PutNumber
 /*
 ==============
 =
-= SCRIPT_PutBoolean
+= SCRIPT_Putbool
 =
 ==============
 */
-void SCRIPT_PutBoolean
+void SCRIPT_Putbool
    (
    int32 scripthandle,
    uint8_t  * sectionname,
    uint8_t  * entryname,
-   boolean bool
+   bool boolean
    )
 {
-	STUBBED("PutBoolean");
+	STUBBED("Putbool");
 }
 
 /*
@@ -1055,7 +1055,7 @@ void SCRIPT_PutDouble
    uint8_t  * sectionname,
    uint8_t  * entryname,
    double number,
-   boolean defaultvalue
+   bool defaultvalue
    )
 {
 	STUBBED("PutDouble");

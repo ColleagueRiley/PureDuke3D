@@ -37,11 +37,7 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 #include <malloc.h>
 #endif
 
-#ifdef _WIN32
-#include "../../Engine/src/windows/inttypes.h"
-#else
 #include <inttypes.h>
-#endif
 
 #include <fcntl.h>
 #include <time.h>
@@ -142,10 +138,10 @@ extern int BYTEVERSION_1_3;
 
 struct player_struct;
 
-#include "../../Game/src/types.h"
+#include "_types.h"
 #include "file_lib.h"
 #include "develop.h"
-#include "gamedefs.h"
+#include "_gamedefs.h"
 #include "keyboard.h"
 #include "util_lib.h"
 #include "function.h"
@@ -157,11 +153,11 @@ struct player_struct;
 #include "rts.h"
 #include "soundefs.h"
 
-#include "audiolib/music.h"
+#include "audiolib/_music.h"
 
 #include "names.h"
 
-#include "../../Engine/src/engine.h"
+#include "engine.h"
 #include "fixedPoint_math.h"
 
 //#define TICRATE (120)

@@ -30,12 +30,12 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
   #include "SDL.h"
 #endif
 
-#include "types.h"
+#include "_types.h"
 
 #include "develop.h"
 #include "scriplib.h"
 #include "file_lib.h"
-#include "gamedefs.h"
+#include "_gamedefs.h"
 #include "keyboard.h"
 #include "util_lib.h"
 #include "function.h"
@@ -106,8 +106,6 @@ int recfilep,totalreccnt;
 uint8_t  debug_on = 0,actor_tog = 0,memorycheckoveride=0;
 uint8_t *rtsptr;
 
-
-extern uint8_t  syncstate;
 extern int32 numlumps;
 
 FILE *frecfilep = (FILE *)NULL;
@@ -1104,13 +1102,6 @@ void faketimerhandler()
 }
 
 extern int32_t cacnum;
-
-typedef struct { 
-    uint8_t *hand;
-    int32_t leng;
-    uint8_t  *lock; } 
-cactype;
-extern cactype cac[];
 
 void caches(void)
 {

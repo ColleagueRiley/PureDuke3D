@@ -10,7 +10,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 //#include "engine_protos.h"
-#include "audiolib/music.h"
+#include "audiolib/_music.h"
 
 //Dummy sound system for when a system has no sound system yet.
 /*

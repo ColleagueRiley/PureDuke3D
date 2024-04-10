@@ -11,7 +11,7 @@
 #include "platform.h"
 #include "cache.h"
 #include "fixedPoint_math.h"
-#include "../../Game/src/global.h"
+#include "global.h"
 #include <strings.h>
 
 char game_dir[512];
@@ -47,6 +47,8 @@ typedef struct grpSet_s{
 static grpSet_t grpSet;
 
 
+#include <fcntl.h>
+
 uint8_t         crcBuffer[ 1 << 20]     ;
 int32_t initgroupfile(const char  *filename)
 {
@@ -71,7 +73,17 @@ int32_t initgroupfile(const char  *filename)
 	//groupfil_memory[numgroupfiles] = NULL; // addresses of raw GRP files in memory
 	//groupefil_crc32[numgroupfiles] = 0;
     
-	archive->fileDescriptor = open(filename,O_BINARY|O_RDONLY,S_IREAD);
+#ifndef O_BINARY
+#define O_BINARY _O_BINARY
+#define O_RDONLY _O_RDONLY
+#define O_WRONLY _O_WRONLY
+#define O_RDWR _O_RDWR
+#define O_TRUNC _O_TRUNC
+#define O_CREAT _O_CREAT
+#endif
+
+
+	archive->fileDescriptor = open(filename,O_BINARY|O_RDONLY,  0x0100);
     
     if (archive->fileDescriptor < 0){
         printf("Error: Unable to open file %s.\n",filename);
@@ -696,8 +708,9 @@ void dfwrite(void *buffer, size_t dasizeof, size_t count, FILE *fil)
 }
 
 
-
-int SafeFileExists ( const char  * _filename );
+#include <stdbool.h>
+	
+bool SafeFileExists ( const char  * _filename );
 int32_t TCkopen4load(const char  *filename, int readfromGRP)
 {
 	char  fullfilename[512];

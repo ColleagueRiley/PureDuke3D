@@ -496,7 +496,7 @@ extern void CONFIG_ReadSetup(void );
 //#line "config.c" 613
 extern void CONFIG_WriteSetup(void );
 //#line "animlib.c" 34
-extern void CheckAnimStarted(uint8_t  *funcname);
+extern void CheckAnimStarted(char  *funcname);
 //#line "animlib.c" 46
 extern uint16 findpage(uint16 framenumber);
 //#line "animlib.c" 71

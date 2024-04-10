@@ -31,6 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef ___BLASTER_H
 #define ___BLASTER_H
 
+#ifndef TRUE
 #define VALID   ( 1 == 1 )
 #define INVALID ( !VALID )
 
@@ -39,6 +40,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #define YES ( 1 == 1 )
 #define NO  ( !YES )
+#endif
 
 #define lobyte( num )   ( ( int )*( ( char * )&( num ) ) )
 #define hibyte( num )   ( ( int )*( ( ( char * )&( num ) ) + 1 ) )

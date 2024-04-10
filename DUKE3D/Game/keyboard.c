@@ -38,7 +38,7 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 byte  KB_KeyDown[ MAXKEYBOARDSCAN ];   // Keyboard state array
 kb_scancode KB_LastScan;
 
-static volatile boolean keyIsWaiting = 0;
+static volatile bool keyIsWaiting = 0;
 
 static uint8_t  scancodeToASCII[ MAXKEYBOARDSCAN ];
 static uint8_t  shiftedScancodeToASCII[ MAXKEYBOARDSCAN ];
@@ -52,7 +52,7 @@ FUNCTIONS
 
 void keyhandler(void)
 {
-    static boolean gotextended = false;
+    static bool gotextended = false;
     
     int rawkey = _readlastkeyhit();
     int lastkey = rawkey & 0x7f;

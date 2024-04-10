@@ -15,12 +15,7 @@
 
 #include "mmulti_unstable.h"
 
-#if (HAVE_ENET_ENET_H == 1)
-	#include <enet/enet.h>
-#else
-	#include "enet/include/enet.h"
-#endif
-
+#include "enet/enet.h"
 //STL
 //#include <vector>
 //#include "buildqueue.h"
@@ -55,7 +50,7 @@ int itmp = 0; //addfaz router fix STUN
 static char lastpacket[576], inlastpacket = 0;
 static short lastpacketfrom, lastpacketleng;
 
-extern long totalclock;  /* MUST EXTERN 1 ANNOYING VARIABLE FROM GAME */
+extern int32_t totalclock;  /* MUST EXTERN 1 ANNOYING VARIABLE FROM GAME */
 static long timeoutcount = 60, resendagaincount = 4, lastsendtime[MAXPLAYERS];
 
 extern unsigned short g_bStun;
@@ -66,7 +61,6 @@ static long bakpacketplc = 0;
 
 short myconnectindex, numplayers;
 short connecthead, connectpoint2[MAXPLAYERS];
-char syncstate = 0;
 
 extern int _argc;
 extern char **_argv;
@@ -472,7 +466,7 @@ short unstable_getpacket (short *other, char *bufptr)
 				{
 								 /* GOOD! Take second half of double packet */
 #if (PRINTERRORS)
-					printf("\n%ld-%ld .û ",gcom->buffer[0],(gcom->buffer[0]+1)&255);
+					printf("\n%ld-%ld .ï¿½ ",gcom->buffer[0],(gcom->buffer[0]+1)&255);
 #endif
 					messleng = ((long)gcom->buffer[3]) + (((long)gcom->buffer[4])<<8);
 					lastpacketleng = gcom->numbytes-7-messleng;
@@ -492,7 +486,7 @@ short unstable_getpacket (short *other, char *bufptr)
 	if ((gcom->buffer[1]&128) == 0)           /* Single packet */
 	{
 #if (PRINTERRORS)
-		printf("\n%ld û  ",gcom->buffer[0]);
+		printf("\n%ld ï¿½  ",gcom->buffer[0]);
 #endif
 
 		messleng = gcom->numbytes-5;
@@ -505,7 +499,7 @@ short unstable_getpacket (short *other, char *bufptr)
 
 														 /* Double packet */
 #if (PRINTERRORS)
-	printf("\n%ld-%ld ûû ",gcom->buffer[0],(gcom->buffer[0]+1)&255);
+	printf("\n%ld-%ld ï¿½ï¿½ ",gcom->buffer[0],(gcom->buffer[0]+1)&255);
 #endif
 
 	messleng = ((long)gcom->buffer[3]) + (((long)gcom->buffer[4])<<8);
@@ -1710,7 +1704,7 @@ void unstable_callcommit(void)
 }
 
 #else
-#error Please define a network transport for your platform.
+//#error Please define a network transport for your platform.
 #endif
 
 /* end of mmulti.c ... */

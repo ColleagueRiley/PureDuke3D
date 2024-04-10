@@ -31,11 +31,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef ___PAS16_H
 #define ___PAS16_H
 
+#ifndef TRUE
 #define TRUE    ( 1 == 1 )
 #define FALSE   ( !TRUE )
 
 #define VALID   ( 1 == 1 )
 #define INVALID ( !VALID )
+#endif
 
 #define lobyte( num )   ( ( int )*( ( char * )&( num ) ) )
 #define hibyte( num )   ( ( int )*( ( ( char * )&( num ) ) + 1 ) )

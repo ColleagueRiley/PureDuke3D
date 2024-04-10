@@ -27,11 +27,7 @@ Prepared for public release: 03/21/2003 - Charlie Wiederhold, 3D Realms
 #ifndef _types_public
 #define _types_public
 
-#ifdef _WIN32
-   #include "../../Engine/src/windows/inttypes.h"
-#else
-   #include <inttypes.h>
-#endif
+#include <inttypes.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -70,8 +66,10 @@ typedef float64                 appfloat;
 //
 //***************************************************************************
 
+#ifndef TRUE
 #define true ( 1 == 1 )
 #define false ( ! true )
+#endif
 
 //***************************************************************************
 //
