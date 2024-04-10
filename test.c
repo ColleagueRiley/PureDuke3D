@@ -1,5 +1,4 @@
 #include <dos.h>
-#include <windows.h>
 #include <stdint.h>
 #include <stdio.h>
 
@@ -8,5 +7,5 @@
 #include "PureDuke3D.h"
 
 int main() {
-
+    
 }
